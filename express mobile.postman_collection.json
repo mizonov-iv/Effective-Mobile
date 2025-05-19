@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "bee830c5-cad3-481d-aa99-577aa9536b13",
+		"name": "express mobile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32895993"
+	},
+	"item": [
+		{
+			"name": "Создать обращение",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"topic\": \"тест 2\",\r\n  \"text\": \"тест2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Взять обращение в работу",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"topic\": \"тест 2\",\r\n  \"text\": \"тест2\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/tickets/1/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"1",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Завершено",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"resolutionText\": \"Проблема решена — СМС-код отправляется корректно\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/tickets/2/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"2",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отмена обращения",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cancellationReason\": \"Пользователь передумал\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tickets/2/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"2",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Все обращения",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Отменить все в работе",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tickets/cancel-all-in-progress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"cancel-all-in-progress"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
